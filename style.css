@@ -41,13 +41,18 @@ body{
     display: flex;
     align-items: center;
     min-height: 100vh;
+    margin: 0;
+    padding: 0;
     overflow: hidden;
     justify-content: center;
     background-color: var(--primary-color);
 }
 
 .container{
+    
     height: 650px;
+    max-height: 500px;
+   margin: 0 auto;
     width: 366px;
     position: relative;
     overflow: hidden;
@@ -390,135 +395,60 @@ i.active{
     -ms-transition: all 0.3s;
     -o-transition: all 0.3s;
 }
-/* Responsive styles */
 
-/* Responsive styles for devices with max-width 480px */
-@media screen and (max-width: 480px) {
+
+
+/* Centering the container on all devices */
+@media only screen and (max-width: 768px) {
+    body {
+        overflow-y: auto;
+    }
     .container {
-        width: 260px;
-        height: 380px;
-    }
-
-    .container.active .cover-image {
-        left: 10px;
-        top: 30px;
-        border-radius: 10px;
-    }
-
-    .container.active .player-body {
-        top: 120px;
-    }
-
-    .info {
-        top: 320px;
-    }
-
-    .container.active .info {
-        top: 50px;
-        left: 75px;
-    }
-
-    .controls {
-        gap: 10px;
-        font-size: 16px;
-    }
-
-    .controls #playpause {
-        font-size: 28px;
-    }
-
-    .container.active .controls {
-        left: -20px;
-        transform: scale(0.35);
-    }
-
-    .list-wrapper {
-        top: 280px;
-    }
-
-    .container.active .list-wrapper {
-        top: 120px;
-    }
-
-    .current-song-title {
-        font-size: 10px;
-    }
-
-    .container.active .current-song-title {
-        bottom: 5px;
-    }
-
-    .more-controls {
-        font-size: 10px;
-    }
-
-    .container.active .more-controls {
-        bottom: -35px;
+        width: 95%;
+        max-width: 350px;
+        margin: 0 auto;
     }
 }
 
-
-
-@media screen and (max-width: 600px) {
+@media only screen and (max-width: 480px) {
     .container {
-        width: 320px;
-        height: 500px;
+        display: block;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 10px;
     }
-
-    .container.active .cover-image {
-        left: 20px;
-        top: 50px;
-        border-radius: 15px;
-    }
-
-    .container.active .player-body {
-        top: 160px;
-    }
-
-    .info {
-        top: 400px;
-    }
-
-    .container.active .info {
-        top: 60px;
-        left: 110px;
-    }
-
     .controls {
-        gap: 15px;
-        font-size: 20px;
+        bottom: 80px; /* Move controls down by setting a larger bottom value */
+        font-size: 20px; /* Reduce the size of control buttons */
+        gap: 15px; /* Adjust the gap between buttons */
     }
 
+    .container.active .bar{
+        width: 80%;
+    }
+
+    .player-body {
+        padding-bottom: 60px; /* Add padding to the bottom to ensure everything fits */
+    }
     .controls #playpause {
-        font-size: 35px;
+        font-size: 30px; /* Reduce the play/pause button size */
     }
-
+    .info h2 {
+        font-size: 15px;
+        margin-top: px;
+        margin-top: -15px;
+        font-weight: 300;
+    }
+    
+    
     .container.active .controls {
-        left: -35px;
-        transform: scale(0.4);
+        position: absolute;
+        width: 216px;
+        bottom: 4px;
+        left: -77px;
     }
-
-    .list-wrapper {
-        top: 360px;
-    }
-
-    .container.active .list-wrapper {
-        top: 160px;
-    }
-
-    .current-song-title {
-        font-size: 12px;
-    }
-
-    .container.active .current-song-title {
-        bottom: 8px;
-    }
-
-    .more-controls {
+    .length{
         font-size: 13px;
-    }
-
-    .container.active .more-controls {
-        bottom: -50px;
+        font-weight: 100;
     }
 }

@@ -658,3 +658,33 @@ function setProgress(e) {
 }
 
 progressBar.addEventListener("click", setProgress);
+
+// search button 
+document.addEventListener('DOMContentLoaded', function() {
+    var searchBtn = document.getElementById('searchBtn');
+    var searchBar = document.getElementById('search-bar');
+
+    // Toggle search bar visibility on search icon click
+    searchBtn.addEventListener('click', function() {
+        searchBar.classList.toggle('show');
+        searchBtn.classList.toggle('hide');
+        searchBtn.classList.toggle('show');
+    });
+
+    // Hide search bar and show search icon when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!searchBar.contains(event.target) && !searchBtn.contains(event.target)) {
+            searchBar.classList.remove('show');
+            searchBtn.classList.remove('hide');
+            searchBtn.classList.add('show');
+        }
+    });
+});
+
+
+// online search
+
+
+
+
+
